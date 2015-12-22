@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/leothelocust/guardian-proof-of-concept.git"
+    "url": "git+ssh://git@bitbucket.org/leothelocust/guardian-node.git"
   },
   "author": "Levi Olson <olson.levi@gmail.com>",
   "license": "UNLICENSED",
-  "homepage": "https://bitbucket.org/leothelocust/guardian-proof-of-concept#readme",
+  "homepage": "https://bitbucket.org/leothelocust/guardian-node#readme",
   "dependencies": {
     "bcrypt": "^0.8.5",
     "body-parser": "^1.14.2",

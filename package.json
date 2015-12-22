@@ -1,0 +1,29 @@
+{
+  "name": "Guardian",
+  "version": "0.0.1",
+  "description": "Proof-of-concept for the guardian service.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/leothelocust/guardian-proof-of-concept.git"
+  },
+  "author": "Levi Olson <olson.levi@gmail.com>",
+  "license": "UNLICENSED",
+  "homepage": "https://bitbucket.org/leothelocust/guardian-proof-of-concept#readme",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.14.2",
+    "dot-env": "0.0.1",
+    "express": "^4.13.3",
+    "mysql": "^2.10.0",
+    "passport": "^0.3.2",
+    "passport-custom": "^1.0.5",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "querystring": "^0.2.0",
+    "request": "^2.67.0"
+  }
+}

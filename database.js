@@ -2,8 +2,7 @@ var bcrypt       = require('bcrypt');
 var mysql        = require('mysql');
 var dotEnv       = require('dot-env');
 
-module.exports   = {
-    verify: function(req, done) {
+module.exports.DatabaseLookup = function(req, done) {
         var connection = mysql.createConnection({
             socket   : process.env.DB_SOCKET,
             user     : process.env.DB_USER,
@@ -34,8 +33,25 @@ module.exports   = {
         });
 
         connection.end();
-    },
-    clientLookup(client_id): function(client_id) {
-        return 'http://xkcd.leviolson.com';
-    }
+    };
+module.exports.ClientLookup = function(client_id, done) {
+    this.client_id = client_id;
+    console.log(this.client_id);
+    var connection = mysql.createConnection({
+        socket   : process.env.DB_SOCKET,
+        user     : process.env.DB_USER,
+        password : process.env.DB_PASSWORD,
+        database : process.env.DB_DATABASE
+    });
+    connection.connect(function(err) {
+        if (err) return done(err, false);
+    });
+    connection.query('SELECT url FROM clients WHERE client_id = \''+this.client_id+'\'', function(err, result, fields) {
+        if (err) return done(err, false);
+        if (!result || !result[0] || !result[0].url) return done(null, false);
+        console.log(result[0].url);
+        return done(null, result[0].url);
+    });
+
+    connection.end();
 };

@@ -34,9 +34,11 @@ app.all('*', function(req, res, next) {
         console.log(req.body._method);
         console.log(url);
         console.log(req.path);
+
+        var method = req.body._method || req.method;
         request(
             {
-                method    : req.body._method || req.method,
+                method    : method,
                 uri       : url + req.path,
                 multipart : [{
                     'content-type' : 'application/json',
@@ -46,10 +48,11 @@ app.all('*', function(req, res, next) {
             function(error, response, body) {
                 if (!error && response.statusCode == 200) {
                     var request = {
+                        "ok"            : response.statusCode==200?true:false,
                         "baseUrl"       : url,
                         "body"          : req.body,
-                        "method"        : req.method,
-                        "requestParams" : req.body.params,
+                        "method"        : method,
+                        "ProxyRequest"  : req.body.params,
                         "originalUrl"   : req.originalUrl,
                         "path"          : req.path,
                         "protocol"      : req.protocol,

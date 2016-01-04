@@ -1,18 +1,18 @@
 {
   "name": "Guardian",
   "version": "0.0.1",
-  "description": "Proof-of-concept for the guardian service.",
+  "description": "A single proxy server to authenticate requests to multiple internal APIs",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/leothelocust/guardian-node.git"
+    "url": "git@github.com:leothelocust/guardian-api-proxy.git"
   },
-  "author": "Levi Olson <olson.levi@gmail.com>",
-  "license": "UNLICENSED",
-  "homepage": "https://bitbucket.org/leothelocust/guardian-node#readme",
+  "author": "Levi Olson <leothelocust> on GitHub",
+  "license": "MIT License",
+  "homepage": "https://github.com/leothelocust/guardian-api-proxy",
   "dependencies": {
     "bcrypt": "^0.8.5",
     "body-parser": "^1.14.2",

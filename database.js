@@ -12,7 +12,7 @@ module.exports.DatabaseLookup = function(req, done) {
         connection.connect(function(err) {
             if (err) done(err);
         });
-        connection.query('SELECT password FROM users WHERE email = \''+req.body.email+'\'', function(err, result, fields) {
+        connection.query(mysql.format('SELECT password FROM users WHERE email = ?', [req.body.email]), function(err, result, fields) {
             if (err) done(err);
             if (!result || !result[0] || !result[0].password) return done(null, false);
 

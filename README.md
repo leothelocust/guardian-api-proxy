@@ -1,4 +1,4 @@
-# Guardian API Proxy #
+# Guardian API Auth Proxy #
 
 A single proxy server to authenticate requests to multiple internal APIs.  Experimenting with using Node.js as a single point of entry to access internal APIs.  The idea being you have _a single_ entry point so APIs can remain inaccessible to the outside world and you only have to edit a single point when making security enhancements. Individual APIs are secured by having to pass a `client_id`, `username`, and `password` along with the request.  This is validated early in the request.
 
